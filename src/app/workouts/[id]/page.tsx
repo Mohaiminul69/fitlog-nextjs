@@ -31,7 +31,7 @@ const WorkoutDetailPage = async ({ params }: PageProps<"/workouts/[id]">) => {
           <h1 className="font-display text-3xl font-bold uppercase leading-tight text-foreground sm:text-4xl">
             {workout.name}
           </h1>
-          <p className="mt-4 text-muted">{workout.description}</p>
+          <p className="mt-4 text-muted-foreground">{workout.description}</p>
 
           <div className="mt-4 flex flex-wrap gap-2">
             {workout.muscleGroups.map((group) => (
@@ -46,7 +46,7 @@ const WorkoutDetailPage = async ({ params }: PageProps<"/workouts/[id]">) => {
 
           <WorkoutSpecs workout={workout} />
           <WorkoutInstructions instructions={workout.instructions} />
-          <WorkoutActions />
+          <WorkoutActions workout={workout} />
         </div>
       </div>
     </div>

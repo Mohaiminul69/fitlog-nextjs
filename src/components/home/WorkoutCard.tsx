@@ -39,10 +39,10 @@ const WorkoutCard = ({ workout }: WorkoutCardProps) => {
           <h3 className="font-display text-lg font-bold uppercase leading-snug text-foreground">
             {workout.name}
           </h3>
-          <p className="mt-1 text-sm text-muted">{workout.equipment}</p>
+          <p className="mt-1 text-sm text-muted-foreground">{workout.equipment}</p>
         </div>
 
-        <div className="mt-auto flex items-center gap-4 border-t border-border pt-3 text-sm text-muted">
+        <div className="mt-auto flex items-center gap-4 border-t border-border pt-3 text-sm text-muted-foreground">
           <span className="flex items-center gap-1.5">
             <Clock className="size-4" />
             {workout.duration} min

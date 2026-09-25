@@ -42,7 +42,7 @@ const NavLinks = ({ variant, onLinkClick }: NavLinksProps) => {
             className={`${linkSizeClassName} text-sm font-medium transition-colors ${
               isActive
                 ? "bg-active-pill text-primary"
-                : "text-muted hover:text-foreground"
+                : "text-muted-foreground hover:text-foreground"
             }`}
           >
             {link.label}

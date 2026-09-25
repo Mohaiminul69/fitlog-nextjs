@@ -12,7 +12,7 @@ const Library = async () => {
       <h2 className="font-display text-3xl font-bold uppercase text-foreground sm:text-4xl">
         The Library
       </h2>
-      <p className="mt-2 text-muted">
+      <p className="mt-2 text-muted-foreground">
         Twelve lifts covering every major muscle group.
       </p>
 

@@ -12,7 +12,7 @@ const NavButton = ({ label, count, variant, onClick }: NavButtonProps) => {
     <Link
       href="/my-plan"
       onClick={onClick}
-      className="flex items-center gap-2 text-sm text-muted transition-colors hover:text-foreground"
+      className="flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
     >
       {label}
       <span

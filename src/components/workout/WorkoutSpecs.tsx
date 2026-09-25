@@ -24,7 +24,7 @@ const WorkoutSpecs = ({ workout }: WorkoutSpecsProps) => {
             index % 2 === 1 ? "bg-white/3" : "bg-surface"
           }`}
         >
-          <span className="text-xs font-semibold uppercase tracking-wide text-muted">
+          <span className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
             {row.label}
           </span>
           <span className="font-medium text-foreground">{row.value}</span>

@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Oswald } from "next/font/google";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import { Toaster } from "@/components/ui/sonner";
+import { PlanProvider } from "@/context/PlanContext";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -36,9 +38,12 @@ const RootLayout = ({ children }: LayoutProps<"/">) => {
         className="flex min-h-full flex-col bg-background font-sans text-foreground"
         suppressHydrationWarning
       >
-        <Navbar />
-        <main className="flex flex-1 flex-col">{children}</main>
-        <Footer />
+        <PlanProvider>
+          <Navbar />
+          <main className="flex flex-1 flex-col">{children}</main>
+          <Footer />
+          <Toaster />
+        </PlanProvider>
       </body>
     </html>
   );

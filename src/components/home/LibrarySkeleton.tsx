@@ -6,7 +6,7 @@ const LibrarySkeleton = () => {
       <h2 className="font-display text-3xl font-bold uppercase text-foreground sm:text-4xl">
         The Library
       </h2>
-      <p className="mt-2 text-muted">Loading workouts…</p>
+      <p className="mt-2 text-muted-foreground">Loading workouts…</p>
 
       <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {CARD_PLACEHOLDERS.map((index) => (

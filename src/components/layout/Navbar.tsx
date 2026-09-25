@@ -5,12 +5,14 @@ import { useState } from "react";
 import Logo from "@/components/layout/Logo";
 import NavButton from "@/components/layout/NavButton";
 import NavLinks from "@/components/layout/NavLinks";
+import { usePlan } from "@/context/PlanContext";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { plan, saved } = usePlan();
 
-  const planCount = 0;
-  const savedCount = 0;
+  const planCount = plan.length;
+  const savedCount = saved.length;
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
