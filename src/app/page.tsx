@@ -1,7 +1,9 @@
+import Hero from "@/components/home/Hero";
+
 const Home = () => {
   return (
-    <div className="flex flex-1 items-center justify-center px-4 py-24 text-center">
-      <p className="text-muted">Home page coming soon.</p>
+    <div className="flex flex-1 flex-col">
+      <Hero />
     </div>
   );
 };
