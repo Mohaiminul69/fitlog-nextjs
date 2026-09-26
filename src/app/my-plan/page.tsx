@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import PlanEmptyState from "@/components/plan/PlanEmptyState";
 import WorkoutStats from "@/components/plan/WorkoutStats";
 import PlanWorkoutCard from "@/components/plan/PlanWorkoutCard";
@@ -33,6 +33,12 @@ const MyPlanPage = () => {
     usePlan();
   const [activeTab, setActiveTab] = useState<"today" | "saved">("today");
   const [sortBy, setSortBy] = useState<SortKey>("duration");
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => setIsLoading(false), 0);
+    return () => clearTimeout(timeoutId);
+  }, []);
 
   const activeList = activeTab === "today" ? plan : saved;
   const exercises = activeList.length;
@@ -82,7 +88,11 @@ const MyPlanPage = () => {
         </div>
 
         <TabsContent value="today" className="mt-6">
-          {sortedPlan.length === 0 ? (
+          {isLoading ? (
+            <p className="py-20 text-center text-muted-foreground">
+              Loading workouts…
+            </p>
+          ) : sortedPlan.length === 0 ? (
             <PlanEmptyState />
           ) : (
             <div className="flex flex-col gap-4">
@@ -99,7 +109,11 @@ const MyPlanPage = () => {
         </TabsContent>
 
         <TabsContent value="saved" className="mt-6">
-          {sortedSaved.length === 0 ? (
+          {isLoading ? (
+            <p className="py-20 text-center text-muted-foreground">
+              Loading workouts…
+            </p>
+          ) : sortedSaved.length === 0 ? (
             <PlanEmptyState />
           ) : (
             <div className="flex flex-col gap-4">
